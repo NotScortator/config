@@ -276,7 +276,7 @@ tmux_conf_copy_to_os_clipboard=false
 # this is the place to override or undo settings
 
 # increase history size
-set -g history-limit 20000
+set -g history-limit 50000
 bind -n C-l send-keys C-l \; run 'sleep 0.1' \;
 
 # start with mouse mode enabled
@@ -298,12 +298,12 @@ set-window-option -g mode-keys vi
 #set -g status-position top
 
 # List of plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-
-# Tmux-CPU
-set -g @plugin 'tmux-plugins/tmux-battery'
-
+set -g @tpm_plugins '          \
+  tmux-plugins/tpm             \
+  tmux-plugins/tmux-continuum  \
+  tmux-plugins/tmux-resurrect  \
+  tmux-plugins/tmux-logging	   \
+'
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
 # set -g @plugin 'git@github.com/user/plugin'
