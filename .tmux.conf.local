@@ -277,6 +277,7 @@ tmux_conf_copy_to_os_clipboard=false
 
 # increase history size
 set -g history-limit 50000
+
 bind -n C-l send-keys C-l \; run 'sleep 0.1' \;
 
 # start with mouse mode enabled
@@ -300,10 +301,13 @@ set-window-option -g mode-keys vi
 # List of plugins
 set -g @tpm_plugins '          \
   tmux-plugins/tpm             \
-  tmux-plugins/tmux-continuum  \
   tmux-plugins/tmux-resurrect  \
+  tmux-plugins/tmux-continuum  \
   tmux-plugins/tmux-logging	   \
 '
+#turn on restore/tmux-continuum
+set -g @continuum-restore 'on'
+
 # Other examples:
 # set -g @plugin 'github_username/plugin_name'
 # set -g @plugin 'git@github.com/user/plugin'
