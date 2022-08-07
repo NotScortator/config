@@ -1,3 +1,4 @@
 #FOR TMUX
 set -g status-keys vi
 setw -g mouse on
+set-option -g history-limit 30000
